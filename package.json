@@ -1,0 +1,20 @@
+{
+  "name": "mtrack-types",
+  "version": "1.0.0",
+  "description": "Types for MTrack Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1vinaykumar/mtrack-types.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1vinaykumar/mtrack-types/issues"
+  },
+  "homepage": "https://github.com/1vinaykumar/mtrack-types#readme"
+}
