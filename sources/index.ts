@@ -1,36 +1,27 @@
 import { IBaseUser } from "../common";
-import { SourceType } from "../enums";
-import { IMutualFund } from "../stocks";
 import { IBaseModel, ITransaction } from "../common";
 
-export interface IMoneySource extends IBaseModel {
+export interface IBaseSource {
     amount: number;
-    type: SourceType;
     transactions: ITransaction[];
 }
 
-export interface IStockSource extends IBaseModel {
-    transactions: ITransaction[];
-}
+export interface IMoneySource extends IBaseModel, IBaseSource { }
+
+export interface IStockSource extends IBaseModel, IBaseSource { }
 
 export interface ISip extends IBaseModel {
     amount: number;
     dayInMonth: Date;
 }
 
-export interface IMutualFundSource {
+export interface IMutualFundSource extends IBaseModel, IBaseSource {
     sips: ISip[];
-    buyNav: number;
-    quantity: number;
-    mutualFund: IMutualFund;
-    transactions: ITransaction[];
 }
 
-export interface IBillSource extends IBaseModel {
+export interface IBillSource extends IBaseModel, IBaseSource {
     payAt: Date;
-    amount: number;
     frequency: number;
-    transactions: ITransaction[];
 }
 
 export interface IUserSources extends IBaseUser {
