@@ -20,3 +20,17 @@ export interface ITransaction extends IBaseModel {
     price: number;
     quantity: number;
 }
+
+export class ApiResult<TResult = void> {
+    public error?: any;
+    public result?: TResult;
+    public statusCode: number;
+    public errorMessage?: string;
+
+    constructor(statusCode: number, result?: TResult, errorMessage?: string, error?: any) {
+        this.error = error;
+        this.result = result;
+        this.statusCode = statusCode;
+        this.errorMessage = errorMessage;
+    }
+}

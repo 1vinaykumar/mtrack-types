@@ -39,3 +39,27 @@ export interface IGoogleUser {
     family_name: string;
     verified_email: boolean;
 }
+
+export class BaseUser implements IBaseUser {
+    email = "";
+    lastName = "";
+    firstName = "";
+
+    constructor(firstName = "", lastName = "", email = "") {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+
+    setUserFromGoogle = (user: IGoogleUser) => {
+        this.firstName = user.given_name;
+        this.lastName = user.family_name;
+        this.email = user.email;
+    };
+
+    setUserFromMainUser = (user: IBaseUser) => {
+        this.firstName = user.firstName;
+        this.lastName = user.lastName;
+        this.email = user.email;
+    };
+}

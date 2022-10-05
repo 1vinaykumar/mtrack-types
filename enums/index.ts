@@ -10,10 +10,10 @@ export enum SourceType {
 }
 
 export enum Status {
-    Initiated = 0,
-    Pending = 1,
-    Compleleted = 2,
-    Failed = -1,
+    Initial = 0,
+    Loading = 1,
+    Success = 2,
+    Failure = -1,
 }
 
 export enum HttpMethod {
@@ -60,3 +60,11 @@ export enum SourcesRouteNames {
     RemoveMoney = "/money/:uniqueId",
     RemoveStock = "/stocks/:uniqueId",
 };
+
+export enum RoutePreix {
+    root = "",
+    auth = "auth",
+    logs = "logs",
+    stocks = "stocks",
+    sources = "sources",
+}

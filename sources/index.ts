@@ -1,3 +1,4 @@
+import { IStock } from "../stocks";
 import { IBaseUser } from "../common";
 import { IBaseModel, ITransaction } from "../common";
 
@@ -8,7 +9,10 @@ export interface IBaseSource {
 
 export interface IMoneySource extends IBaseModel, IBaseSource { }
 
-export interface IStockSource extends IBaseModel, IBaseSource { }
+export interface IStockSource extends IBaseModel, IBaseSource {
+    stock: unknown;
+    current: number;
+}
 
 export interface ISip extends IBaseModel {
     amount: number;
